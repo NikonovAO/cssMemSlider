@@ -20,10 +20,43 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  max-width: 1200px;
+  overflow-x: hidden;
 }
 
 .slider__list {
-  display: none;
+  width: 400%;
+  height: 442px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.slider__item {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: translateX(100%);
+  transform: translateX(0%);
+  opacity: 0;
+  transition: transform 0.5s;
+}
+
+.slider__item-1 {
+  background-image: url('./assets/meme-1.webp');
+}
+
+.slider__item-2 {
+  background-image: url('./assets/meme-2.webp');
+}
+
+.slider__item-3 {
+  background-image: url('./assets/meme-3.webp');
+}
+
+.slider__item-4 {
+  background-image: url('./assets/meme-4.gif');
 }
 
 .descriptions {
@@ -82,4 +115,26 @@
 
 #slider-button-4:checked ~ .slider__wrapper > .descriptions > .slider__controls > .slider__control-area:nth-child(4) > .slider__control {
   background-color: aqua;
+}
+
+/*перелистывание слайдов*/
+
+#slider-button-1:checked ~ .slider__wrapper > .slider__list > .slider__item:nth-child(1) {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+#slider-button-2:checked ~ .slider__wrapper > .slider__list > .slider__item:nth-child(2) {
+  opacity: 1;
+  transform: translateX(-100%);
+}
+
+#slider-button-3:checked ~ .slider__wrapper > .slider__list > .slider__item:nth-child(3) {
+  opacity: 1;
+  transform: translateX(-200%);
+}
+
+#slider-button-4:checked ~ .slider__wrapper > .slider__list > .slider__item:nth-child(4) {
+  opacity: 1;
+  transform: translateX(-300%);
 }
