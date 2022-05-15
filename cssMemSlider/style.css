@@ -5,3 +5,63 @@
   list-style-type: none;
   text-decoration: none;
 }
+
+.slider__button {
+  width: 0;
+  height: 0;
+}
+
+.slider__list {
+  display: none;
+}
+
+.slider__descriptions {
+  display: none;
+}
+
+.slider__controls {
+  display: flex;
+  gap: 1rem;
+}
+
+.slider__control-area {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.slider__control {
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 0.1rem solid green;
+  border-radius: 50%;
+}
+
+.slider__control-area:hover{
+  background-color: aqua;
+}
+
+.slider__control-area:hover > .slider__control {
+  border-color: grey;
+}
+
+#slider-button-1:checked ~ .slider__wrapper > .descriptions > .slider__controls > .slider__control-area:nth-child(1) > .slider__control {
+  background-color: aqua;
+}
+
+#slider-button-2:checked ~ .slider__wrapper > .descriptions > .slider__controls > .slider__control-area:nth-child(2) > .slider__control {
+  background-color: aqua;
+}
+
+#slider-button-3:checked ~ .slider__wrapper > .descriptions > .slider__controls > .slider__control-area:nth-child(3) > .slider__control {
+  background-color: aqua;
+}
+
+#slider-button-4:checked ~ .slider__wrapper > .descriptions > .slider__controls > .slider__control-area:nth-child(4) > .slider__control {
+  background-color: aqua;
+}
