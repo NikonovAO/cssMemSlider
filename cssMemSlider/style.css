@@ -38,7 +38,8 @@
 
 .slider__wrapper {
   width: 100%;
-  max-width: 44rem;
+  max-width: 50rem;
+  max-height: 70vh;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
