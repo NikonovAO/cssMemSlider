@@ -51,7 +51,8 @@
 
 .slider__list-wrapper {
   width: 100%;
-  height: 442px;
+  height: calc(100vw / 1.75);
+  max-height: 33rem;
   overflow: hidden;
   border-radius: 1rem;
 }
@@ -71,7 +72,7 @@
 }
 
 .slider__item-1 {
-  background-image: url('./assets/meme-1.webp');
+  background-image: url('./assets/meme-1.png');
 }
 
 .slider__item-2 {
@@ -90,6 +91,13 @@
   display: flex;
   gap: 1rem;
 }
+
+@media (max-width: 768px) {
+  .descriptions {
+    flex-direction: column-reverse;
+  }
+}
+
 .slider__descriptions-wrapper {
   flex-basis: 75%;
   overflow: hidden;
@@ -115,6 +123,12 @@
   justify-content: flex-end;
   gap: 0.75rem;
   flex-basis: 25%;
+}
+
+@media (max-width: 768px) {
+  .slider__controls {
+    align-self: center;
+  }
 }
 
 .slider__control-area {
