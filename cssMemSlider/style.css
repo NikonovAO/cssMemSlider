@@ -71,9 +71,19 @@
   display: flex;
   gap: 1rem;
 }
+.slider__descriptions-wrapper {
+  flex-basis: 75%;
+  overflow: hidden;
+}
 
 .slider__descriptions {
-  flex-basis: 75%;
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s;
+}
+
+.slider__description {
+  flex: 0 0 100%;
 }
 
 .slider__controls {
@@ -125,18 +135,22 @@
   background-color: aqua;
 }
 
-#slider-button-1:checked ~ .slider__wrapper > .slider__list-wrapper > .slider__list {
+#slider-button-1:checked ~ .slider__wrapper > .slider__list-wrapper > .slider__list,
+#slider-button-1:checked ~ .slider__wrapper > .descriptions > .slider__descriptions-wrapper > .slider__descriptions {
   transform: translateX(0%);
 }
 
-#slider-button-2:checked ~ .slider__wrapper > .slider__list-wrapper > .slider__list {
+#slider-button-2:checked ~ .slider__wrapper > .slider__list-wrapper > .slider__list,
+#slider-button-2:checked ~ .slider__wrapper > .descriptions > .slider__descriptions-wrapper > .slider__descriptions {
   transform: translateX(-100%);
 }
 
-#slider-button-3:checked ~ .slider__wrapper > .slider__list-wrapper > .slider__list {
+#slider-button-3:checked ~ .slider__wrapper > .slider__list-wrapper > .slider__list,
+#slider-button-3:checked ~ .slider__wrapper > .descriptions > .slider__descriptions-wrapper > .slider__descriptions {
   transform: translateX(-200%);
 }
 
-#slider-button-4:checked ~ .slider__wrapper > .slider__list-wrapper > .slider__list {
+#slider-button-4:checked ~ .slider__wrapper > .slider__list-wrapper > .slider__list,
+#slider-button-4:checked ~ .slider__wrapper > .descriptions > .slider__descriptions-wrapper > .slider__descriptions {
   transform: translateX(-300%);
 }
