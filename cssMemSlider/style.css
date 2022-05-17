@@ -151,9 +151,15 @@
   border-radius: 50%;
 }
 
-.slider__control-area:hover > .slider__control {
+.slider__control-area:hover .slider__control {
   border-color: var(--color-hover);
   background-color: var(--color-hover);
+  transition: all 0.5s;
+}
+
+.slider__control-area:active .slider__control {
+  border-color: var(--color-shadow);
+  background-color: var(--color-shadow);
   transition: all 0.5s;
 }
 
