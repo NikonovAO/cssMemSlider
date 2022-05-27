@@ -66,8 +66,9 @@
 }
 
 .slider__item {
+  background-color: rgb(50, 50, 50);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   flex: 0 0 100%;
 }
