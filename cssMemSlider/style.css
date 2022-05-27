@@ -1,0 +1,201 @@
+:root {
+  --color-primary: #6495ed;
+  --color-hover: #f0fff0;
+  --color-shadow: #808080;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.body {
+  background-image: url('./assets/white-paper.png');
+}
+
+.header {
+  text-align: center;
+}
+
+.header__title {
+  font-size: 2.3rem;
+  color: var(--color-primary);
+  text-shadow: 0.05em 0.05em 0.1em var(--color-shadow);
+  margin: 0.5rem auto 0.1rem;
+}
+
+.main {
+  margin: 0 2rem;
+}
+
+.slider__button {
+  width: 0;
+  height: 0;
+}
+
+.slider__wrapper {
+  width: 100%;
+  max-width: 50rem;
+  max-height: 70vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-x: hidden;
+  border-radius: 1rem;
+  box-shadow: 0rem 0rem 1rem var(--color-shadow);
+  padding: 1rem;
+}
+
+.slider__list-wrapper {
+  width: 100%;
+  height: calc(100vw / 1.75);
+  max-height: 33rem;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.slider__list {
+  height: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  transition: transform 0.5s;
+}
+
+.slider__item {
+  background-color: rgb(50, 50, 50);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  flex: 0 0 100%;
+}
+
+.slider__item-1 {
+  background-image: url('./assets/meme-1.png');
+}
+
+.slider__item-2 {
+  background-image: url('./assets/meme-2.webp');
+}
+
+.slider__item-3 {
+  background-image: url('./assets/meme-3.webp');
+}
+
+.slider__item-4 {
+  background-image: url('./assets/meme-4.gif');
+}
+
+.descriptions {
+  display: flex;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .descriptions {
+    flex-direction: column-reverse;
+  }
+}
+
+.slider__descriptions-wrapper {
+  flex-basis: 75%;
+  overflow: hidden;
+}
+
+.slider__descriptions {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s;
+}
+
+.slider__description {
+  flex: 0 0 100%;
+}
+
+.slider__description-text {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.slider__controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  flex-basis: 25%;
+}
+
+@media (max-width: 768px) {
+  .slider__controls {
+    align-self: center;
+  }
+}
+
+.slider__control-area {
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.slider__control {
+  width: 1rem;
+  height: 1rem;
+  border: 0.2rem solid var(--color-primary);
+  background-color: var(--color-primary);
+  border-radius: 50%;
+}
+
+.slider__control-area:hover .slider__control {
+  border-color: var(--color-hover);
+  background-color: var(--color-hover);
+  transition: all 0.5s;
+}
+
+.slider__control-area:active .slider__control {
+  border-color: var(--color-shadow);
+  background-color: var(--color-shadow);
+  transition: all 0.5s;
+}
+
+#slider-button-1:checked ~ .slider__wrapper > .descriptions > .slider__controls > .slider__control-area:nth-child(1) > .slider__control {
+  background-color: inherit;
+}
+
+#slider-button-2:checked ~ .slider__wrapper > .descriptions > .slider__controls > .slider__control-area:nth-child(2) > .slider__control {
+  background-color: inherit;
+}
+
+#slider-button-3:checked ~ .slider__wrapper > .descriptions > .slider__controls > .slider__control-area:nth-child(3) > .slider__control {
+  background-color: inherit;
+}
+
+#slider-button-4:checked ~ .slider__wrapper > .descriptions > .slider__controls > .slider__control-area:nth-child(4) > .slider__control {
+  background-color: inherit;
+}
+
+#slider-button-1:checked ~ .slider__wrapper > .slider__list-wrapper > .slider__list,
+#slider-button-1:checked ~ .slider__wrapper > .descriptions > .slider__descriptions-wrapper > .slider__descriptions {
+  transform: translateX(0%);
+}
+
+#slider-button-2:checked ~ .slider__wrapper > .slider__list-wrapper > .slider__list,
+#slider-button-2:checked ~ .slider__wrapper > .descriptions > .slider__descriptions-wrapper > .slider__descriptions {
+  transform: translateX(-100%);
+}
+
+#slider-button-3:checked ~ .slider__wrapper > .slider__list-wrapper > .slider__list,
+#slider-button-3:checked ~ .slider__wrapper > .descriptions > .slider__descriptions-wrapper > .slider__descriptions {
+  transform: translateX(-200%);
+}
+
+#slider-button-4:checked ~ .slider__wrapper > .slider__list-wrapper > .slider__list,
+#slider-button-4:checked ~ .slider__wrapper > .descriptions > .slider__descriptions-wrapper > .slider__descriptions {
+  transform: translateX(-300%);
+}
